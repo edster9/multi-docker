@@ -22,15 +22,16 @@ after_success:
     - docker push esahakian/multi-docker-nginx
     - docker push esahakian/multi-docker-server
     - docker push esahakian/multi-docker-worker
-      # deploy:
-#     access_key_id: $AWS_ACCESS_KEY
-#     secret_access_key: $AWS_SECRET_KEY
-#     edge: true
-#     provider: elasticbeanstalk
-#     region: 'us-east-2'
-#     app: 'docker-react'
-#     env: 'DockerReact-env'
-#     bucket_name: 'elasticbeanstalk-us-east-2-612756466101'
-#     bucket_path: 'docker-react'
-#     on:
-#         branch: master
+
+deploy:
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    edge: true
+    provider: elasticbeanstalk
+    region: 'us-east-2'
+    app: 'multi-docker'
+    env: 'MultiDocker-env'
+    bucket_name: 'elasticbeanstalk-us-east-2-612756466101'
+    bucket_path: 'multi-docker'
+    on:
+        branch: master
